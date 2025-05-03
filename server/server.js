@@ -16,7 +16,7 @@ const app = express();
 // CORS setup
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://your-frontend.vercel.app' // 🔁 Replace with your actual Vercel frontend URL
+  'https://task-tracker-git-main-amay-nagpals-projects.vercel.app/' 
 ];
 
 app.use(cors({
