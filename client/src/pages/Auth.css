@@ -1,0 +1,139 @@
+.auth-container {
+    max-width: 500px;
+    margin: 8rem auto 2rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .auth-header h1 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+  }
+  
+  .auth-header p {
+    color: #777;
+  }
+  
+  .auth-form .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .auth-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .auth-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .auth-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  }
+  
+  .auth-form .btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+  
+  .auth-link {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+  }
+  
+  .auth-link a {
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+  
+  .auth-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .auth-social {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .auth-social p {
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  .auth-social p:before,
+  .auth-social p:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #eee;
+  }
+  
+  .auth-social p:before {
+    left: 0;
+  }
+  
+  .auth-social p:after {
+    right: 0;
+  }
+  
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .social-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .social-button i {
+    font-size: 1.2rem;
+  }
+  
+  .social-button.google {
+    color: #db4437;
+  }
+  
+  .social-button.facebook {
+    color: #4267B2;
+  }
+  
+  .social-button.github {
+    color: #333;
+  }
