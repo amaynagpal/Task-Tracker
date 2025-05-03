@@ -52,7 +52,7 @@ JWT_EXPIRE=30d
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/task-tracker.git
+git clone https://github.com/amaynagpal/task-tracker.git
 cd task-tracker
 ```
 
