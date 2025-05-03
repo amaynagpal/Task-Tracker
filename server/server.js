@@ -13,13 +13,27 @@ const taskRoutes = require('./routes/tasks');
 // Initialize express
 const app = express();
 
-// Middleware
-app.use(express.json());
+// CORS setup
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://your-frontend.vercel.app' // 🔁 Replace with your actual Vercel frontend URL
+];
+
 app.use(cors({
-  origin: 'http://localhost:3000', // exact origin of frontend
+  origin: (origin, callback) => {
+    // allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 
+// Middleware
+app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
@@ -30,19 +44,19 @@ app.use('/api/tasks', taskRoutes);
 // Error handler middleware
 app.use(errorHandler);
 
-// Connect to DB and start server
+// Connect to MongoDB and start the server
 mongoose
   .connect(MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
   })
   .then(() => {
-    console.log('MongoDB Connected');
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+    console.log('✅ MongoDB Connected');
+    app.listen(PORT || 5000, () => {
+      console.log(`🚀 Server running on port ${PORT || 5000}`);
     });
   })
   .catch((err) => {
-    console.error('MongoDB connection error:', err.message);
+    console.error('❌ MongoDB connection error:', err.message);
     process.exit(1);
   });
